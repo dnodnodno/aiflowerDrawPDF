@@ -4,3 +4,10 @@ OVERVIEW
 This is an implementation of aiflowers with PDF export for rendering drawings for print.
 
 
+KEYBOARD COMMANDS
+=================
+
+"c" -- Clears background
+"s" -- Saves PDF to root folder
+"+" -- Increases scale
+"-" -- Decreases scale

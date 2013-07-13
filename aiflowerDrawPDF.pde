@@ -22,7 +22,7 @@ void setup() {
     background(255);
     smooth();
    //set at 60fps for app, slowed for drawing
-    frameRate(10);  
+    frameRate(30);  
     beginRecord(PDF, "filename-####.pdf");   
     showStroke = false;   
 
