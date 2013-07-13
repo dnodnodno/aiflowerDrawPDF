@@ -22,7 +22,7 @@ void setup() {
     background(255);
     smooth();
    //set at 60fps for app, slowed for drawing
-    frameRate(30);  
+    frameRate(10);  
     beginRecord(PDF, "filename-####.pdf");   
     showStroke = false;   
 
@@ -32,19 +32,36 @@ void setup() {
 void flwr (float x, float y) {
     
     noStroke();
-    fill(255,0,0); //red
+    //fill(255,0,0); //red
+    fill(aiCol);
     for (int j = 0; j < 6; j++) {
         ellipse(0, -35, 35 , 35);
         //rotate(radians(72));
         rotate(radians(60));
     }
     // centre circle
-    fill(255); //white
+    //fill(255); //white
+    fill(aiCol);
     ellipse(0, 0,35,35);
 }
             
             
 void draw() {
+                
+  int col = int(random(6));
+  if (col == 0) { 
+    aiCol = color (255,255,255); //white
+  } 
+  else if (col == 1) { aiCol = color (255,0,0); //red
+  }
+  else if (col == 2) { aiCol = color (255,255,255); //red
+  }
+  else if (col == 3) { aiCol = color (255,0,0); //red
+  }
+  else if (col == 4) { aiCol = color (255,255,255); //red
+  }
+  else if (col == 5) { aiCol = color (255,0,0); //white
+  }
                 
   if (record) {                 
     println("file saved");
@@ -58,7 +75,7 @@ void draw() {
    s = cos(a)*2;             
   //draw flower at mouseX and Y coordinates              
   translate(mouseX, mouseY);    
-  scale(s + (aiScale * 0.25)); 
+  scale(s + (aiScale * 0.1)); 
   flwr(0,0);
 }
 void keyPressed() {
